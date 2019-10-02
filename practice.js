@@ -27,9 +27,9 @@
   Then invoke the callback function, passing in the first element in the array as it's argument.
 */
 
-function first(array, callback){
-  callback(array[0])
-} 
+function first(arr, cb){
+  cb(arr[0])
+}
 
 // Do not edit the code below.
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
@@ -49,8 +49,8 @@ first(names, function(firstName){
   Then invoke the callback, passing in the last element in the array as the argument.
 */
 
-function last(array, callback){
-  callback(array[array.length -1])
+function last(arr, cb) {
+  cb(arr[arr.length - 1])
 }
 
 // Do not edit the code below.
@@ -69,8 +69,8 @@ last(names, function(lastName){
   Invoke the callback, passing in the product of the two numbers multiplied as the argument. 
 */
 
-function multiply(num1, num2, callback){
-  callback(num1 * num2)
+function multiply(num1, num2, cb) {
+  cb(num1 * num2)
 }
 
 // Do not edit the code below.
@@ -90,15 +90,14 @@ multiply(4, 3, function(answer){
   If the name does not exist, invoke the callback with false as the argument.
 */
 
-function contains(array, name, callback){
-  for(let i = 0; i < array.length; i++ ){
-    if(array[i] === name){
-      callback(true)
+function contains(arr, name, cb) {
+  for(let i = 0; i < arr.length; i++){
+    if(arr[i] === name){
+      cb(true)
     } else {
-      callback(false)
+      cb(false)
     }
   }
-  
 }
 
 // Do not edit the code below.
@@ -121,11 +120,11 @@ contains(names, 'Colt', function(result){
 */
 
 function uniq(array, callback){
-let newArray = array.filter(function(value, index){
-  return array.indexOf(value) === index
-})
-callback(newArray) 
-}
+  let newArray = array.filter(function(value, index){
+    return array.indexOf(value) === index
+  })
+  callback(newArray) 
+  }
 
 
 // Do not edit the code below.
